@@ -109,4 +109,11 @@ public class MainActivity extends ActionBarActivity {
         // Unregister broadcast listeners
         this.unregisterReceiver(mReceiver);
     }
+
+
+    public void ModeChooser (View v) {
+        Intent modeChooser = new Intent(this,modeChooser.class);
+        startActivity(modeChooser);
+    }
+
 }

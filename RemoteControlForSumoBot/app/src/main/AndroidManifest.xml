@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <uses-permission android:name="android.permission.BLUETOOTH" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -17,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".modeChooser" />
     </application>
 
 </manifest>
