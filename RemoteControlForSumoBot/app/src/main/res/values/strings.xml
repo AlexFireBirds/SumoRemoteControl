@@ -4,4 +4,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_mode_chooser">modeChooser</string>
+
+    <string name="button_drive1">foreward</string>
+    <string name="button_drive2">left</string>
+    <string name="button_drive3">right</string>
+    <string name="button_drive4">backward</string>
 </resources>

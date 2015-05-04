@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/grey"
+    android:padding="5dp">
+
+    <Button
+        android:id="@+id/Button_top"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/violet"
+        android:text="@string/button_drive1"
+        android:layout_above="@+id/Button_left"
+        android:layout_alignLeft="@+id/Button_bottom"
+        android:layout_alignStart="@+id/Button_bottom" />
+
+    <Button
+        android:id="@+id/Button_left"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:text="@string/button_drive2"
+        android:layout_above="@+id/Button_bottom"
+        android:layout_toLeftOf="@+id/Button_bottom"
+        android:layout_toStartOf="@+id/Button_bottom" />
+
+    <Button
+        android:id="@+id/Button_right"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/fairBlue"
+        android:text="@string/button_drive3"
+        android:layout_above="@+id/Button_bottom"
+        android:layout_toRightOf="@+id/Button_bottom"
+        android:layout_toEndOf="@+id/Button_bottom" />
+
+    <Button
+        android:id="@+id/Button_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:text="@string/button_drive4"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:background="@color/grey"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
+
+
+</RelativeLayout>
