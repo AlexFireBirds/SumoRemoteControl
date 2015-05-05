@@ -5,8 +5,17 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_mode_chooser">modeChooser</string>
 
-    <string name="button_drive1">foreward</string>
+    <string name="title_drive">Drive Remote</string>
+    <string name="button_drive1">foreword</string>
     <string name="button_drive2">left</string>
     <string name="button_drive3">right</string>
     <string name="button_drive4">backward</string>
+    <string name="button_drive5">stop</string>
+
+    <string name="title_PID">PID Settings</string>
+    <string name="button_P_send">P val</string>
+    <string name="button_D_send">D val</string>
+    <string name="button_I_send">I val</string>
+
+    <string name="title_Console">Sumo Control</string>
 </resources>
