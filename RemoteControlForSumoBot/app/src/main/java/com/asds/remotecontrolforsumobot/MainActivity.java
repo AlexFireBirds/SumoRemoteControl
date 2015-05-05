@@ -7,18 +7,27 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.asds.remotecontrolforsumobot.Bluetooth;
 
 public class MainActivity extends Activity {
 
     private static final int REQUEST_ENABLE_BT = 1;
+    public final String TAG = "Main";
+
+    private Bluetooth bt;
+    private TextView status;
 
     /**
      * Newly discovered devices
@@ -33,32 +42,26 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        status = (TextView) findViewById(R.id.textStatus);
+/*
         ArrayAdapter<String> mArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
         ListView listView = (ListView) findViewById(R.id.DeviceList);
 
         listView.setAdapter(mArrayAdapter);
+*/
+        bt = new Bluetooth(this, mHandler);
+
+
     }
 
     public void enableBluetooth(View v) {
-        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBluetoothAdapter == null)
-        {
-            // Device does not support Bluetooth
-        }
+        connectService();
 
-        if(mBluetoothAdapter != null)
-        {
-            if (!mBluetoothAdapter.isEnabled()) {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-            }
-        }
     }
 
     public void discoverDevice(View v) {
-
-        BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        bt.sendMessage("drive speed L 1000");
+       /* BroadcastReceiver mReceiver = new BroadcastReceiver() {
             public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
                 // When discovery finds a device
@@ -72,7 +75,8 @@ public class MainActivity extends Activity {
         };
         // Register the BroadcastReceiver
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        registerReceiver(mReceiver, filter); // Don't forget to unregister during onDestroy
+        registerReceiver(mReceiver, filter); // Don't forget to unregister during onDestroy*/
+
     }
 
 
@@ -116,5 +120,48 @@ public class MainActivity extends Activity {
         Intent modeChooser = new Intent(this,modeChooser.class);
         startActivity(modeChooser);
     }
+
+    private final Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case Bluetooth.MESSAGE_STATE_CHANGE:
+                    Log.d(TAG, "MESSAGE_STATE_CHANGE: " + msg.arg1);
+                    break;
+                case Bluetooth.MESSAGE_WRITE:
+                    Log.d(TAG, "MESSAGE_WRITE ");
+                    break;
+                case Bluetooth.MESSAGE_READ:
+                    Log.d(TAG, "MESSAGE_READ ");
+                    break;
+                case Bluetooth.MESSAGE_DEVICE_NAME:
+                    Log.d(TAG, "MESSAGE_DEVICE_NAME "+msg);
+                    break;
+                case Bluetooth.MESSAGE_TOAST:
+                    Log.d(TAG, "MESSAGE_TOAST "+msg);
+                    break;
+            }
+        }
+    };
+
+    public void connectService(){
+        try {
+            status.setText("Connecting...");
+            BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+            if (bluetoothAdapter.isEnabled()) {
+                bt.start();
+                bt.connectDevice("Nemo");
+                Log.d(TAG, "Btservice started - listening");
+                status.setText("Connected");
+            } else {
+                Log.w(TAG, "Btservice started - bluetooth is not enabled");
+                status.setText("Bluetooth Not enabled");
+            }
+        } catch(Exception e){
+            Log.e(TAG, "Unable to start bt ",e);
+            status.setText("Unable to connect " +e);
+        }
+    }
+
 
 }
