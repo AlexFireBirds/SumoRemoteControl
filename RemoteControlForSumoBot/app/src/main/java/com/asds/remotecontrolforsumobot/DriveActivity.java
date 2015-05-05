@@ -28,7 +28,7 @@ public class DriveActivity extends Activity{
 
         TV_progress = (TextView) findViewById(R.id.SeekBarTextView);
 
-        SeekBar speedSB = (SeekBar) findViewById(R.id.SpeedSeekBar);
+        final SeekBar speedSB = (SeekBar) findViewById(R.id.SpeedSeekBar);
         TV_progress.setText("Covered: " + speedSB.getProgress() + "/" + speedSB.getMax());
 
         speedSB.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -44,7 +44,7 @@ public class DriveActivity extends Activity{
         });
 
         Button btnTop = (Button) findViewById(R.id.Button_top);
-        Button btnBottom = (Button) findViewById(R.id.Button_bottom);
+        final Button btnBottom = (Button) findViewById(R.id.Button_bottom);
         Button btnLeft = (Button) findViewById(R.id.Button_left);
         Button btnRight = (Button) findViewById(R.id.Button_right);
         Button btnStop= (Button) findViewById(R.id.Button_stop);
@@ -52,13 +52,14 @@ public class DriveActivity extends Activity{
         btnBottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Taped backward", Toast.LENGTH_SHORT).show();
+              Toast.makeText(getApplicationContext(), "Taped backward", Toast.LENGTH_SHORT).show();
             }
         });
 
         btnTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.drive(1,speedSB.getProgress());
                 Toast.makeText(getApplicationContext(), "Taped ahead", Toast.LENGTH_SHORT).show();
             }
         });
@@ -66,6 +67,7 @@ public class DriveActivity extends Activity{
         btnRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.drive(3,speedSB.getProgress());
                 Toast.makeText(getApplicationContext(), "Taped right", Toast.LENGTH_SHORT).show();
             }
         });
@@ -73,6 +75,7 @@ public class DriveActivity extends Activity{
         btnLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.drive(2,speedSB.getProgress());
                 Toast.makeText(getApplicationContext(), "Taped left", Toast.LENGTH_SHORT).show();
             }
         });
@@ -80,6 +83,7 @@ public class DriveActivity extends Activity{
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.drive(0,0);
                 Toast.makeText(getApplicationContext(), "Taped stop", Toast.LENGTH_SHORT).show();
             }
         });

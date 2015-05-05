@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
     private static final int REQUEST_ENABLE_BT = 1;
     public final String TAG = "Main";
 
-    private Bluetooth bt;
+    public static Bluetooth bt;
     private TextView status;
 
     /**
@@ -35,6 +35,32 @@ public class MainActivity extends Activity {
     private ArrayAdapter<String> mArrayAdapter;
     BroadcastReceiver mReceiver;
     BluetoothAdapter mBluetoothAdapter;
+
+    public static void drive(int direction, int speed)
+    {
+        switch(direction)
+        {
+            case 0:
+                bt.sendMessage("drive speed L" + '0');
+                bt.sendMessage("drive speed R" + '0');
+            break;
+
+            case 1:
+                bt.sendMessage("drive speed L" + String.valueOf(speed));
+                bt.sendMessage("drive speed R" + String.valueOf(speed));
+            break;
+
+            case 2:
+                bt.sendMessage("drive speed L" + String.valueOf(speed));
+            break;
+
+            case 3:
+                bt.sendMessage("drive speed R" + String.valueOf(speed));
+            break;
+
+
+        }
+    }
 
 
     @Override
