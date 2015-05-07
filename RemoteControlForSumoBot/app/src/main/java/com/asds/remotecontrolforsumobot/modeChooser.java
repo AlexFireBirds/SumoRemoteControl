@@ -25,6 +25,14 @@ public class modeChooser extends Activity {
                 startDriveActivity();
             }
         });
+
+        Button BtnPID = (Button) findViewById(R.id.Btn_PID);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startPIDActivity();
+            }
+        });
     }
 
 
@@ -50,8 +58,13 @@ public class modeChooser extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startDriveActivity(){
+    private void startDriveActivity(){
         Intent driveRemote = new Intent(this,DriveActivity.class);
+        startActivity(driveRemote);
+    }
+
+    private void startPIDActivity(){
+        Intent driveRemote = new Intent(this,PIDSettings.class);
         startActivity(driveRemote);
     }
 }

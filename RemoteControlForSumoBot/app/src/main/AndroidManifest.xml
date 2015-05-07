@@ -25,6 +25,7 @@
 
         <activity android:name=".modeChooser" />
         <activity android:name=".DriveActivity" />
+        <activity android:name=".PIDSettings" />
     </application>
 
 </manifest>

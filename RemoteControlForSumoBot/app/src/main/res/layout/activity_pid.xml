@@ -18,32 +18,84 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_P_send"/>
+        android:orientation="horizontal"
+        android:padding="20dp">
 
         <TextView
-            android:text="Pval"
-            android:textSize="20dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
             android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="@string/button_P_send"/>
+
+        <EditText
+            android:text="000000"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
             android:layout_width="100dp"
             android:layout_height="match_parent" />
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="@string/button_I_send"/>
+
+        <EditText
+            android:text="000000"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="@string/button_D_send"/>
+
+        <EditText
+            android:text="000000"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/BtnSendPID"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@string/button_I_send"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_D_send"/>
+        android:layout_margin="30dp"
+        android:text="@string/buttonPIDsend"
+        android:layout_gravity="center_horizontal"/>
 
 
 </LinearLayout>

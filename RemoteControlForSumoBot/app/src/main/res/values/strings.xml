@@ -13,9 +13,10 @@
     <string name="button_drive5">stop</string>
 
     <string name="title_PID">PID Settings</string>
-    <string name="button_P_send">P val</string>
-    <string name="button_D_send">D val</string>
-    <string name="button_I_send">I val</string>
+    <string name="button_P_send">P value:</string>
+    <string name="button_D_send">D value:</string>
+    <string name="button_I_send">I value:</string>
+    <string name="buttonPIDsend">send</string>
 
     <string name="title_Console">Sumo Control</string>
 </resources>

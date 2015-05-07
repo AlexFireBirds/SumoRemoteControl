@@ -6,7 +6,7 @@
     android:padding="5dp">
 
     <Button
-        android:id="@+id/PID"
+        android:id="@+id/Btn_PID"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="adjust PID values"
