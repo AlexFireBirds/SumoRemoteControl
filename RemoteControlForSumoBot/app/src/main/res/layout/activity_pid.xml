@@ -31,11 +31,13 @@
             android:text="@string/button_P_send"/>
 
         <EditText
+            android:id="@+id/PID_PVal_TV"
             android:text="000000"
             android:textSize="20dp"
             android:gravity="center_vertical"
             android:layout_width="100dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:inputType="number" />
 
 
     </LinearLayout>
@@ -56,11 +58,13 @@
             android:text="@string/button_I_send"/>
 
         <EditText
+            android:id="@+id/PID_IVal_TV"
             android:text="000000"
             android:textSize="20dp"
             android:gravity="center_vertical"
             android:layout_width="100dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:inputType="number"/>
 
 
     </LinearLayout>
@@ -81,11 +85,13 @@
             android:text="@string/button_D_send"/>
 
         <EditText
+            android:id="@+id/PID_DVal_TV"
             android:text="000000"
             android:textSize="20dp"
             android:gravity="center_vertical"
             android:layout_width="100dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:inputType="number"/>
 
     </LinearLayout>
 

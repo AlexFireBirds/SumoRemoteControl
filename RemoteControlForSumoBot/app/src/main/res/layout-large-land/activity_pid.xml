@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="@string/title_PID"
+            android:padding="10dp"
+            android:textSize="30dp"
+            android:textColor="@color/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="70dp"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textSize="40dp"
+                android:text="@string/button_P_send"/>
+
+            <EditText
+                android:id="@+id/PID_PVal_TV"
+                android:text="000000"
+                android:textSize="40dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="number" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="70dp"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textSize="40dp"
+                android:text="@string/button_I_send"/>
+
+            <EditText
+                android:id="@+id/PID_IVal_TV"
+                android:text="000000"
+                android:textSize="40dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="number"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="70dp"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textSize="40dp"
+                android:text="@string/button_D_send"/>
+
+            <EditText
+                android:id="@+id/PID_DVal_TV"
+                android:text="000000"
+                android:textSize="40dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="number"/>
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/BtnSendPID"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:padding="10dp"
+            android:textSize="40dp"
+            android:text="@string/buttonPIDsend"
+            android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -75,7 +75,7 @@ public class MainActivity extends Activity {
 
         listView.setAdapter(mArrayAdapter);
 */
-        bt = new Bluetooth(this, mHandler);
+        //bt = new Bluetooth(this, mHandler);
 
 
     }

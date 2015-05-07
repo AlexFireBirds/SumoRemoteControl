@@ -27,7 +27,7 @@ public class modeChooser extends Activity {
         });
 
         Button BtnPID = (Button) findViewById(R.id.Btn_PID);
-        button.setOnClickListener(new View.OnClickListener() {
+        BtnPID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startPIDActivity();

@@ -6,7 +6,7 @@
     <string name="title_activity_mode_chooser">modeChooser</string>
 
     <string name="title_drive">Drive Remote</string>
-    <string name="button_drive1">foreword</string>
+    <string name="button_drive1">foreward</string>
     <string name="button_drive2">left</string>
     <string name="button_drive3">right</string>
     <string name="button_drive4">backward</string>
