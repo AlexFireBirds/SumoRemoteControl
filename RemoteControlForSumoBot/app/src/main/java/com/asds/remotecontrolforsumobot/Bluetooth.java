@@ -21,6 +21,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
@@ -30,6 +31,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * This class does all the work for setting up and managing Bluetooth
@@ -81,10 +83,19 @@ public class Bluetooth {
 	 *            A Handler to send messages back to the UI Activity
 	 */
 	public Bluetooth(Context context, Handler handler) {
+        mHandler = handler;
 		mAdapter = BluetoothAdapter.getDefaultAdapter();
-		if (D) for (BluetoothDevice bd: mAdapter.getBondedDevices()) Log.d(TAG, "Bounded device "+bd);
-		mState = STATE_NONE;
-		mHandler = handler;
+
+        if(mAdapter != null) {
+            if (D) for (BluetoothDevice bd : mAdapter.getBondedDevices())
+                Log.d(TAG, "Bounded device " + bd);
+            mState = STATE_NONE;
+            //mHandler = handler;
+        }
+        else
+        {
+
+        }
 	}
 
 	/**

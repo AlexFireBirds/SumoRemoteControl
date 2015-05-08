@@ -69,15 +69,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         status = (TextView) findViewById(R.id.textStatus);
-/*
-        ArrayAdapter<String> mArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
-        ListView listView = (ListView) findViewById(R.id.DeviceList);
 
-        listView.setAdapter(mArrayAdapter);
-*/
-        //bt = new Bluetooth(this, mHandler);
-
-
+        bt = new Bluetooth(this, mHandler);
     }
 
     public void enableBluetooth(View v) {
@@ -185,7 +178,7 @@ public class MainActivity extends Activity {
             }
         } catch(Exception e){
             Log.e(TAG, "Unable to start bt ",e);
-            status.setText("Unable to connect " +e);
+            status.setText("Unable to connect "); //+e would add the error text
         }
     }
 
