@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.os.Build;
 
 import com.asds.remotecontrolforsumobot.Bluetooth;
 
@@ -131,7 +132,7 @@ public class MainActivity extends Activity {
         }
 
         // Unregister broadcast listeners
-        this.unregisterReceiver(mReceiver);
+        //this.unregisterReceiver(mReceiver);
     }
 
 
@@ -168,8 +169,14 @@ public class MainActivity extends Activity {
             status.setText("Connecting...");
             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             if (bluetoothAdapter.isEnabled()) {
+                String manufacturer = Build.MANUFACTURER;
+                String model = Build.MODEL;
                 bt.start();
-                bt.connectDevice("Nemo");
+                if(model.endsWith("GT-I9100")){
+                    bt.connectDevice("BBerta");
+                }else{
+                    bt.connectDevice("Nemo");
+                }
                 Log.d(TAG, "Btservice started - listening");
                 status.setText("Connected");
             } else {
