@@ -131,7 +131,7 @@ public class MainActivity extends Activity {
         }
 
         // Unregister broadcast listeners
-        this.unregisterReceiver(mReceiver);
+        //this.unregisterReceiver(mReceiver);
     }
 
 
