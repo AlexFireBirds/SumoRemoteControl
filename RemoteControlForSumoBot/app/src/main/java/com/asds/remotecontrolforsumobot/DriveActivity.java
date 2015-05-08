@@ -52,7 +52,8 @@ public class DriveActivity extends Activity{
         btnBottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              Toast.makeText(getApplicationContext(), "Taped backward", Toast.LENGTH_SHORT).show();
+                MainActivity.drive(4,speedSB.getProgress());
+                Toast.makeText(getApplicationContext(), "Taped backward", Toast.LENGTH_SHORT).show();
             }
         });
 

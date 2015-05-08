@@ -2,25 +2,18 @@ package com.asds.remotecontrolforsumobot;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.os.Build;
-
-import com.asds.remotecontrolforsumobot.Bluetooth;
 
 public class MainActivity extends Activity {
 
@@ -34,34 +27,8 @@ public class MainActivity extends Activity {
      * Newly discovered devices
      */
     private ArrayAdapter<String> mArrayAdapter;
-    BroadcastReceiver mReceiver;
-    BluetoothAdapter mBluetoothAdapter;
-
-    public static void drive(int direction, int speed)
-    {
-        switch(direction)
-        {
-            case 0:
-                bt.sendMessage("drive speed L" + '0');
-                bt.sendMessage("drive speed R" + '0');
-            break;
-
-            case 1:
-                bt.sendMessage("drive speed L" + String.valueOf(speed));
-                bt.sendMessage("drive speed R" + String.valueOf(speed));
-            break;
-
-            case 2:
-                bt.sendMessage("drive speed L" + String.valueOf(speed));
-            break;
-
-            case 3:
-                bt.sendMessage("drive speed R" + String.valueOf(speed));
-            break;
-
-
-        }
-    }
+    private BroadcastReceiver mReceiver;
+    private BluetoothAdapter mBluetoothAdapter;
 
 
     @Override
@@ -72,6 +39,43 @@ public class MainActivity extends Activity {
         status = (TextView) findViewById(R.id.textStatus);
 
         bt = new Bluetooth(this, mHandler);
+    }
+
+    public static void drive(int direction, int speed)
+    {
+        switch(direction)
+        {
+            case 0:
+                bt.sendMessage("drive speed L " + "0");
+                bt.sendMessage("drive speed R " + "0");
+            break;
+
+            case 1:
+                bt.sendMessage("drive speed L " + String.valueOf(speed));
+                bt.sendMessage("drive speed R " + String.valueOf(speed));
+            break;
+
+            case 2:
+
+                bt.sendMessage("drive speed R " + String.valueOf(speed));
+                bt.sendMessage("drive speed L " + "-" + String.valueOf(speed));
+            break;
+
+            case 3:
+                bt.sendMessage("drive speed L " + String.valueOf(speed));
+                bt.sendMessage("drive speed R " + "-" + String.valueOf(speed));
+            break;
+
+            case 4:
+                bt.sendMessage("drive speed R " + "-" + String.valueOf(speed));
+                bt.sendMessage("drive speed L " + "-" + String.valueOf(speed));
+            break;
+            default:
+                bt.sendMessage("drive speed L " + "0");     //invalid command emergency break
+                bt.sendMessage("drive speed R " + "0");
+                break;
+
+        }
     }
 
     public void enableBluetooth(View v) {
@@ -169,8 +173,8 @@ public class MainActivity extends Activity {
             status.setText("Connecting...");
             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             if (bluetoothAdapter.isEnabled()) {
-                String manufacturer = Build.MANUFACTURER;
-                String model = Build.MODEL;
+
+                String model = Build.MODEL;     //identify target Device
                 bt.start();
                 if(model.endsWith("GT-I9100")){
                     bt.connectDevice("BBerta");

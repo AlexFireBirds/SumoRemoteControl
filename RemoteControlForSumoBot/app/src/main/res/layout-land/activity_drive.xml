@@ -60,7 +60,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/SpeedSeekBar"
-        android:max="5000"
+        android:max="6000"
         android:background="@color/grey"
         android:progressBackgroundTint="@color/fairBlue"
         android:layout_alignParentBottom="true"
