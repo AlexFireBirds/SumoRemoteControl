@@ -18,7 +18,7 @@ import android.os.Build;
 public class MainActivity extends Activity {
 
     private static final int REQUEST_ENABLE_BT = 1;
-    public final String TAG = "Main";
+    public static final String TAG = "Main";
 
     public static Bluetooth bt;
     private TextView status;
@@ -71,6 +71,27 @@ public class MainActivity extends Activity {
                 bt.sendMessage("drive speed R " + "0");
                 break;
 
+        }
+    }
+
+    public static void setPIDValues (int P, int I, int D, boolean isLeftMotor) {
+
+        // Don't forget the space Mr. Schmidt
+        if(isLeftMotor == Boolean.TRUE) {
+            bt.sendMessage("pid speed L p " + String.valueOf(P));
+            Log.i(TAG,"sent P value to motor L");
+            bt.sendMessage("pid speed L i " + String.valueOf(I));
+            Log.i(TAG,"sent I value to motor L");
+            bt.sendMessage("pid speed L d " + String.valueOf(D));
+            Log.i(TAG,"sent D value to motor L");
+        }
+        else {
+            bt.sendMessage("pid speed R p " + String.valueOf(P));
+            Log.i(TAG,"sent P value to motor R");
+            bt.sendMessage("pid speed R i " + String.valueOf(I));
+            Log.i(TAG,"sent I value to motor R");
+            bt.sendMessage("pid speed R d " + String.valueOf(D));
+            Log.i(TAG,"sent D value to motor R");
         }
     }
 

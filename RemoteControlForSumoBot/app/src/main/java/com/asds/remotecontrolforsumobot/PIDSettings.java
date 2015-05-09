@@ -70,6 +70,12 @@ public class PIDSettings extends Activity {
         editor.apply();
         editor.putInt(KEY_DVAL,d);
         editor.apply();
+
+        /* Send values to the SumoBot
+          param FALSE means right motor
+          param TRUE means left motor */
+        MainActivity.setPIDValues(p,i,d,Boolean.FALSE);
+        MainActivity.setPIDValues(p,i,d,Boolean.TRUE);
     }
 
     private void InitComponents(){
