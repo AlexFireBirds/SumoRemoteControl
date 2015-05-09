@@ -23,10 +23,6 @@ public class MainActivity extends Activity {
     public static Bluetooth bt;
     private TextView status;
 
-    /**
-     * Newly discovered devices
-     */
-    private ArrayAdapter<String> mArrayAdapter;
     private BroadcastReceiver mReceiver;
     private BluetoothAdapter mBluetoothAdapter;
 
@@ -80,29 +76,7 @@ public class MainActivity extends Activity {
 
     public void enableBluetooth(View v) {
         connectService();
-
     }
-
-    public void discoverDevice(View v) {
-        bt.sendMessage("drive speed L 1000");
-       /* BroadcastReceiver mReceiver = new BroadcastReceiver() {
-            public void onReceive(Context context, Intent intent) {
-                String action = intent.getAction();
-                // When discovery finds a device
-                if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                    // Get the BluetoothDevice object from the Intent
-                    BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                    // Add the name and address to an array adapter to show in a ListView
-                    mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
-                }
-            }
-        };
-        // Register the BroadcastReceiver
-        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        registerReceiver(mReceiver, filter); // Don't forget to unregister during onDestroy*/
-
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

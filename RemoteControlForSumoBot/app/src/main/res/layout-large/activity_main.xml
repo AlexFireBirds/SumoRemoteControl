@@ -32,22 +32,6 @@
         />
 
     <Button
-        android:id="@+id/DiscoverDevices"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Discover device"
-        android:onClick="discoverDevice"
-        android:paddingBottom="@dimen/activity_horizontal_margin"
-        />
-
-    <ListView
-        android:id="@+id/DeviceList"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-    </ListView>
-
-
-    <Button
         android:id="@+id/openModeChooser"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
