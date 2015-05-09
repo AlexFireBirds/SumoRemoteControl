@@ -129,10 +129,7 @@ public class MainActivity extends Activity {
         if (mBluetoothAdapter != null) {
             mBluetoothAdapter.cancelDiscovery();
         }
-
-        // Unregister broadcast listeners
-        //this.unregisterReceiver(mReceiver);
-    }
+ }
 
 
     public void ModeChooser (View v) {
