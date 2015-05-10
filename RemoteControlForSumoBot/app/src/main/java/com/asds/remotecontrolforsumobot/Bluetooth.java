@@ -348,8 +348,7 @@ public class Bluetooth {
 						case STATE_LISTEN:
 						case STATE_CONNECTING:
 							// Situation normal. Start the connected thread.
-							connected(socket, socket.getRemoteDevice(),
-									mSocketType);
+							connected(socket, socket.getRemoteDevice(),mSocketType);
 							break;
 						case STATE_NONE:
 						case STATE_CONNECTED:
@@ -376,8 +375,7 @@ public class Bluetooth {
 			try {
 				mmServerSocket.close();
 			} catch (IOException e) {
-				Log.e(TAG, "Socket Type" + mSocketType
-						+ "close() of server failed", e);
+				Log.e(TAG, "Socket Type" + mSocketType + "close() of server failed", e);
 			}
 		}
 	}
@@ -424,8 +422,7 @@ public class Bluetooth {
 				try {
 					mmSocket.close();
 				} catch (IOException e2) {
-					Log.e(TAG, "unable to close() " + mSocketType
-							+ " socket during connection failure", e2);
+					Log.e(TAG, "unable to close() " + mSocketType + " socket during connection failure", e2);
 				}
 				connectionFailed();
 				return;
@@ -444,8 +441,7 @@ public class Bluetooth {
 			try {
 				mmSocket.close();
 			} catch (IOException e) {
-				Log.e(TAG, "close() of connect " + mSocketType
-						+ " socket failed", e);
+				Log.e(TAG, "close() of connect " + mSocketType + " socket failed", e);
 			}
 		}
 	}

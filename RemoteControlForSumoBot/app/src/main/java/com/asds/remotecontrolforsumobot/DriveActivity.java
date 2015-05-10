@@ -3,6 +3,7 @@ package com.asds.remotecontrolforsumobot;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.UserManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -18,6 +19,7 @@ public class DriveActivity extends Activity{
 
     private int speed = 0;
     private TextView TV_progress;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
