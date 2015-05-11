@@ -28,6 +28,7 @@
         <activity android:name=".modeChooser" />
         <activity android:name=".DriveActivity" />
         <activity android:name=".PIDSettings" />
+        <activity android:name=".CrawlerActivity" />
     </application>
 
 </manifest>

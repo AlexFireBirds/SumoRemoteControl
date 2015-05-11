@@ -17,7 +17,6 @@ public class modeChooser extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mode_chooser);
 
-
         Button button = (Button) findViewById(R.id.RemoteControl);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +30,14 @@ public class modeChooser extends Activity {
             @Override
             public void onClick(View v) {
                 startPIDActivity();
+            }
+        });
+
+        Button BtnTest = (Button) findViewById(R.id.BtnCrawlerControl);
+        BtnTest.setOnClickListener(new View.OnClickListener(){
+            @Override
+        public void onClick(View v){
+                startCrawlerActivity();
             }
         });
     }
@@ -65,6 +72,11 @@ public class modeChooser extends Activity {
 
     private void startPIDActivity(){
         Intent driveRemote = new Intent(this,PIDSettings.class);
+        startActivity(driveRemote);
+    }
+
+    private void startCrawlerActivity(){
+        Intent driveRemote = new Intent(this,CrawlerActivity.class);
         startActivity(driveRemote);
     }
 }
