@@ -69,7 +69,6 @@
 
     <TextView
         android:id="@+id/SeekBarTextView"
-        android:text="asdasdasdas"
         android:textColor="@color/fairBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

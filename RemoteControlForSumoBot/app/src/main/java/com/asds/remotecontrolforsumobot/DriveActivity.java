@@ -31,13 +31,13 @@ public class DriveActivity extends Activity{
         TV_progress = (TextView) findViewById(R.id.SeekBarTextView);
 
         final SeekBar speedSB = (SeekBar) findViewById(R.id.SpeedSeekBar);
-        TV_progress.setText("Covered: " + speedSB.getProgress() + "/" + speedSB.getMax());
+        TV_progress.setText("Speed: " + speedSB.getProgress() + "/" + speedSB.getMax());
 
         speedSB.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 speed = progress;
-                TV_progress.setText("Covered: " + progress + "/" + seekBar.getMax());
+                TV_progress.setText("Speed: " + progress + "/" + seekBar.getMax());
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -46,7 +46,7 @@ public class DriveActivity extends Activity{
         });
 
         Button btnTop = (Button) findViewById(R.id.Button_top);
-        final Button btnBottom = (Button) findViewById(R.id.Button_bottom);
+        Button btnBottom = (Button) findViewById(R.id.Button_bottom);
         Button btnLeft = (Button) findViewById(R.id.Button_left);
         Button btnRight = (Button) findViewById(R.id.Button_right);
         Button btnStop= (Button) findViewById(R.id.Button_stop);
