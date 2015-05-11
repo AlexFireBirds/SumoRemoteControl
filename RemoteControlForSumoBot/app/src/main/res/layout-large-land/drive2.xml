@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -16,8 +16,8 @@
         android:rotation="270"
         android:background="@color/grey"
         android:progressBackgroundTint="@color/fairBlue"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dip"/>
 
     <SeekBar
     android:layout_width="300dp"
@@ -29,7 +29,8 @@
     android:rotation="270"
     android:background="@color/grey"
     android:progressBackgroundTint="@color/fairBlue"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"/>
+    android:layout_centerHorizontal="true"
+    android:layout_centerInParent="true"
+    android:layout_toRightOf="@+id/SB_left"    />
 
-</LinearLayout>
+</RelativeLayout>

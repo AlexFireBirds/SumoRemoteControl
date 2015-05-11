@@ -32,7 +32,6 @@ public class CrawlerActivity extends Activity{
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if(leftCntr % 30 == 0) {
-                    MainActivity.drive(6, progress);
                    if (progress > 6000) {
                         MainActivity.drive(6, progress - 6000);
                     } else {
@@ -61,7 +60,6 @@ public class CrawlerActivity extends Activity{
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if(rightCntr % 30 == 0) {
-                    MainActivity.drive(5, progress);
                     if (progress > 6000) {
                         MainActivity.drive(5, progress - 6000);
                     } else {
