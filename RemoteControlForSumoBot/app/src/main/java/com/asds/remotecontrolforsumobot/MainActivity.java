@@ -66,6 +66,23 @@ public class MainActivity extends Activity {
                 bt.sendMessage("drive speed R " + "-" + String.valueOf(speed));
                 bt.sendMessage("drive speed L " + "-" + String.valueOf(speed));
             break;
+            // Only drive with right crawler
+            case 5:
+                bt.sendMessage("drive speed R " + String.valueOf(speed));
+            break;
+            // Only drive with left crawler
+            case 6:
+                bt.sendMessage("drive speed L " + String.valueOf(speed));
+            break;
+            // Only drive with right crawler bwd
+            case 7:
+                bt.sendMessage("drive speed R " + "-" + String.valueOf(speed));
+                break;
+            // Only drive with left crawler bwd
+            case 8:
+                bt.sendMessage("drive speed L " + "-" + String.valueOf(speed));
+                break;
+
             default:
                 bt.sendMessage("drive speed L " + "0");     //invalid command emergency break
                 bt.sendMessage("drive speed R " + "0");
