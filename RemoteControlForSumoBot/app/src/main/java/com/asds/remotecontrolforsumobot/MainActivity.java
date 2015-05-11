@@ -39,6 +39,8 @@ public class MainActivity extends Activity {
 
     public static void drive(int direction, int speed)
     {
+        String model = Build.MODEL;     //identify target Device
+
         switch(direction)
         {
             case 0:
@@ -68,20 +70,18 @@ public class MainActivity extends Activity {
             break;
             // Only drive with right crawler
             case 5:
+                if(model.endsWith("GT-I9100")){ //Scale Down speed for better Handling on Phone
+                    speed = speed/2;
+                }
                 bt.sendMessage("drive speed R " + String.valueOf(speed));
             break;
             // Only drive with left crawler
             case 6:
+                if(model.endsWith("GT-I9100")){
+                    speed = speed/2;
+                }
                 bt.sendMessage("drive speed L " + String.valueOf(speed));
             break;
-            // Only drive with right crawler bwd
-            case 7:
-                bt.sendMessage("drive speed R " + "-" + String.valueOf(speed));
-                break;
-            // Only drive with left crawler bwd
-            case 8:
-                bt.sendMessage("drive speed L " + "-" + String.valueOf(speed));
-                break;
 
             default:
                 bt.sendMessage("drive speed L " + "0");     //invalid command emergency break
