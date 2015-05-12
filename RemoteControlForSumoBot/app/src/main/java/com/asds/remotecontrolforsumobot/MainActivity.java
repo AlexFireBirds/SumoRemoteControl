@@ -37,6 +37,24 @@ public class MainActivity extends Activity {
         bt = new Bluetooth(this, mHandler);
     }
 
+    public static void BattleCmd(String mode)
+    {
+        switch(mode){
+            case "calbrate":
+                bt.sendMessage("zumo battle on");
+                break;
+            case "start":
+                bt.sendMessage("zumo battle on");
+                break;
+            case "end":
+                bt.sendMessage("zumo battle off");
+                break;
+            default:
+                break;
+        }
+
+    }
+
     public static void drive(int direction, int speed)
     {
         String model = Build.MODEL;     //identify target Device

@@ -18,5 +18,10 @@
     <string name="button_I_send">I value:</string>
     <string name="buttonPIDsend">send</string>
 
-    <string name="title_Console">Sumo Control</string>
+    <string name="title_Battle">Zumo Battle preparation</string>
+    <string name="btn_calibrate">calibrate Reflectance</string>
+    <string name="btn_battleStart">enter Battle Mode</string>
+    <string name="btn_battleEnd">exit Battle Mode</string>
+
+
 </resources>

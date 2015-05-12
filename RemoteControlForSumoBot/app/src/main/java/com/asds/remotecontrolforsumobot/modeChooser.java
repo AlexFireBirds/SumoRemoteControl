@@ -40,6 +40,15 @@ public class modeChooser extends Activity {
                 startCrawlerActivity();
             }
         });
+
+        Button BtnBattle = (Button) findViewById(R.id.Btn_BattleControl);
+        BtnBattle.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startBattleActivity();
+            }
+        });
+
     }
 
 
@@ -77,6 +86,11 @@ public class modeChooser extends Activity {
 
     private void startCrawlerActivity(){
         Intent driveRemote = new Intent(this,CrawlerActivity.class);
+        startActivity(driveRemote);
+    }
+
+    private void startBattleActivity(){
+        Intent driveRemote = new Intent(this,BattleActivity.class);
         startActivity(driveRemote);
     }
 }
